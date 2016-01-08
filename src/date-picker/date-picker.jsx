@@ -222,6 +222,20 @@ const DatePicker = React.createClass({
     this.openDialog();
   },
 
+  /**
+   * Close the date-picker dialog programmatically from a parent.
+   */
+  closeDialog() {
+    this.refs.dialogWindow.dismiss();
+  },
+
+  /**
+   * Alias for `closeDialog()` for an api consistent with Snackbar, DatePickerDialog, TimePickerDialog.
+   */
+  dismiss() {
+    this.closeDialog();
+  },
+
   _handleDialogAccept(d) {
     if (!this._isControlled()) {
       this.setDate(d);
